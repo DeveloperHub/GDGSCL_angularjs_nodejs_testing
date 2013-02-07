@@ -1,4 +1,3 @@
 GDG Liberec example
 
-npm install
-node run
+'npm install' and 'node run'
