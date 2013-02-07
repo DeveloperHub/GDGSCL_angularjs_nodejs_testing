@@ -25,12 +25,12 @@ module.exports = function(){
       app.use(express.errorHandler());
     });
 
-    app.get('/', function(req, res){ res.send('Hello world'); });
     app.get('/api/pages', api.findAll);
     app.get('/api/pages/:slug', api.find);
     app.post('/api/pages', api.save);
     app.post('/api/pages/:slug', api.save);
     app.delete('/api/pages/:slug', api.delete);
+    app.get('/*', function(req, res){ res.send('Hello world'); });
 
     // start listening
     app.listen(3000, function(){
