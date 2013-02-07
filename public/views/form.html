@@ -1,0 +1,22 @@
+<form class="form-horizontal" ng-submit="process(page)">
+  <fieldset>
+    <legend>{{page.label}} - Editace</legend>
+    <div class="control-group">
+        <label class="control-label" for="inputLabel">Název</label>
+        <div class="controls">
+          <input type="text" id="inputLabel" placeholder="Název" ng-model="page.label">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputContent">Obsah</label>
+        <div class="controls">
+          <textarea id="inputContent" placeholder="Obsah" ng-model="page.content"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">Upravit</button>
+        </div>
+      </div>
+  </fieldset>
+</form>
