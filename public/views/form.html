@@ -1,22 +1,35 @@
-<form class="form-horizontal" ng-submit="process(page)">
-  <fieldset>
-    <legend>{{page.label}} - Editace</legend>
-    <div class="control-group">
-        <label class="control-label" for="inputLabel">Název</label>
-        <div class="controls">
-          <input type="text" id="inputLabel" placeholder="Název" ng-model="page.label">
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="inputContent">Obsah</label>
-        <div class="controls">
-          <textarea id="inputContent" placeholder="Obsah" ng-model="page.content"></textarea>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <button type="submit" class="btn">Upravit</button>
-        </div>
-      </div>
-  </fieldset>
+<form name="form" class="form-horizontal" ng-submit="process(page)">
+	<fieldset>
+		<legend ng-switch on="action">
+			<span ng-switch-when="add">Přidání stránky</span>
+			<span ng-switch-when="edit">{{page.label}} - editace</span>
+		</legend>
+
+		<div class="control-group">
+			<label class="control-label" for="inputLabel">Název</label>
+			<div class="controls">
+				<input type="text" id="inputLabel" placeholder="Název" ng-model="page.label" required>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputDefault">Hlavní:</label>
+			<div class="controls">
+				<input type="checkbox" id="inputDefault" ng-model="page.main">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputContent">Obsah</label>
+			<div class="controls">
+				<textarea id="inputContent" placeholder="Obsah" ng-model="page.content" rows="10"></textarea>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn" >Uložit</button>
+			</div>
+		</div>
+	</fieldset>
 </form>

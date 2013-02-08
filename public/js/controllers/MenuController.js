@@ -7,5 +7,4 @@ gdg.controller('MenuController', function MenuController($scope, $location, Page
         $scope.pages = args.items;
     });
 
-    
 });
