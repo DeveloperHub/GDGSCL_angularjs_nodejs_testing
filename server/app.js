@@ -20,14 +20,14 @@ module.exports = function(){
 	// Conf errror handlering
 
 	app.configure('development', function(){
-      app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-    });
+		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+	});
 
-    app.configure('production', function(){
-      app.use(express.errorHandler());
-    });
+	app.configure('production', function(){
+		app.use(express.errorHandler());
+	});
 
-    // Routes
+	// Routes
 
 	app.get('/api/pages', api.findAll);
 	app.get('/api/pages/:slug', api.find);
@@ -37,8 +37,8 @@ module.exports = function(){
 	app.get('/*', function(req, res){ 
 		fs.readFile(__dirname + '/../public/index.html', 'utf8', function (err, data) {
 			if (err) throw err;
-		    
-		    res.send(data);
+			
+			res.send(data);
 		});
 	});
 
