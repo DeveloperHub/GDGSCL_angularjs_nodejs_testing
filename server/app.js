@@ -2,23 +2,17 @@ module.exports = function(){
 
 	var express = require('express');
 	var resource = require('express-resource');
-	var fs = require('fs');
+
 	var app = express();
+	var db = require("mongojs").connect("gdg:gdg@ds039417.mongolab.com:39417/gdg-pages", ["pages"]);
 
-	var databaseUrl = "gdg:gdg@ds039417.mongolab.com:39417/gdg-pages"; 
-	var collections = ["pages"]
-	var db = require("mongojs").connect(databaseUrl, collections);
-
-	//var api = require('./api')(db);
+	// Configuring
 
 	app.configure(function(){
 		app.use(express.bodyParser());
-		app.use(express.methodOverride());
 		app.use(express.static(__dirname + '/../public'));
 		app.use(app.router);
 	});
-
-	// Conf errror handlering
 
 	app.configure('development', function(){
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -29,15 +23,6 @@ module.exports = function(){
 	});
 
 	// Routes
-
-	/*
-
-	app.get('/api/pages', api.findAll);
-	app.get('/api/pages/:slug', api.find);
-	app.post('/api/pages', api.create);
-	app.put('/api/pages/:slug', api.save);
-	app.delete('/api/pages/:slug', api.delete);
-	*/
 
 	app.resource('api/v1/pages', require('./resources/pages')(db));
 	app.get('/', function(req, res){ 
@@ -53,5 +38,3 @@ module.exports = function(){
 
 	return app;
 };
-
-
