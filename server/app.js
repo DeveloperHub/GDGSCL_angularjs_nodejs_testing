@@ -1,6 +1,7 @@
 module.exports = function(){
 
 	var express = require('express');
+	var resource = require('express-resource');
 	var fs = require('fs');
 	var app = express();
 
@@ -8,7 +9,7 @@ module.exports = function(){
 	var collections = ["pages"]
 	var db = require("mongojs").connect(databaseUrl, collections);
 
-	var api = require('./api')(db);
+	//var api = require('./api')(db);
 
 	app.configure(function(){
 		app.use(express.bodyParser());
@@ -29,17 +30,18 @@ module.exports = function(){
 
 	// Routes
 
+	/*
+
 	app.get('/api/pages', api.findAll);
 	app.get('/api/pages/:slug', api.find);
 	app.post('/api/pages', api.create);
 	app.put('/api/pages/:slug', api.save);
 	app.delete('/api/pages/:slug', api.delete);
-	app.get('/*', function(req, res){ 
-		fs.readFile(__dirname + '/../public/index.html', 'utf8', function (err, data) {
-			if (err) throw err;
-			
-			res.send(data);
-		});
+	*/
+
+	app.resource('api/v1/pages', require('./resources/pages')(db));
+	app.get('/', function(req, res){ 
+		rs.sendFile('index.html');
 	});
 
 	// Start listening
