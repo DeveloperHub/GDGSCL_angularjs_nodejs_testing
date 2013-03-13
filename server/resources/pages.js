@@ -12,6 +12,10 @@ module.exports = function(db) {
 	return {
 			// list pages
 			index: function(req, res){
+				if( req.accepts('application/json') == undefined )
+				{
+					res.send(406);
+				}
 				db.pages.find(function(err, pages) {
 					if( err || !pages) res.send(404, {message: err});
 					else 
@@ -22,8 +26,10 @@ module.exports = function(db) {
 
 			// create one
 			create : function(req, res){
-				if(!req.body.label)
-					res.send(403, { status: 'error', message: "Musite vyplnit nazev stranky."});
+				if(req.is('json') === false)
+					res.send(415);
+				else if(!req.body.label)
+					res.send(400, { status: 'error', message: "Musite vyplnit nazev stranky."});
 				else{
 					var data = {
 						label: req.body.label,
@@ -49,6 +55,10 @@ module.exports = function(db) {
 
 			// show one
 			show : function(req, res){
+				if( req.accepts('application/json') == undefined )
+				{
+					res.send(406);
+				}
 				db.pages.findOne({slug: req.route.params.page}, function(err, page) {
 					if( err || !page) res.send(404, {message: err});
 					else 
