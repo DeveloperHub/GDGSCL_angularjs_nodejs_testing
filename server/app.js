@@ -14,6 +14,7 @@ module.exports = function(){
 		app.use(app.router);
 	});
 
+	/*
 	app.configure('development', function(){
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 	});
@@ -21,6 +22,7 @@ module.exports = function(){
 	app.configure('production', function(){
 		app.use(express.errorHandler());
 	});
+	*/
 
 	// Routes
 
