@@ -14,7 +14,6 @@ gdg.controller('PageController', function PageController($scope, $rootScope, $ro
 			$rootScope.$broadcast('updateMenuItems', { items: Page.query()});
 			$location.path('/');
 
-			alert('Stranka "' + response.data.label + '" byla smazana.');
 		}, function(err){ 
 			if(err.status == 403)
 				alert('Chyba ' + err.data.message);

@@ -8,9 +8,7 @@ gdg.controller('ManageController', function ManageController($scope, $rootScope,
 	}else
 		$scope.action = "add";
 	
-
 	$scope.process = function(item){
-
 		var successHandler = function(response){
 			$rootScope.$broadcast('updateMenuItems', { items: Page.query()});
 			$location.path('/' + response.data.slug);
@@ -19,8 +17,6 @@ gdg.controller('ManageController', function ManageController($scope, $rootScope,
 		var errorHandler = function(err){ 
 			if(err.status == 403)
 				alert('Chyba ' + err.data.message);
-			else
-				alert('Chyba do logu');
 		};
 
 		if(item.slug == undefined)
