@@ -8,6 +8,7 @@ var express = require('express')
 app.configure(function(){
 	app.use(express.bodyParser());
 	app.use(express.static(__dirname + '/../public'));
+	app.use(express.static(process.cwd() + '/public/test/'))
 	app.use(app.router);
 });
 

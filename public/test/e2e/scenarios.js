@@ -11,6 +11,7 @@ var data = [
 
 
 describe('GDG Spaghetti Code Liberec example app', function () {
+
   describe('Kontrola HomePage', function () {
 
     beforeEach(function () {
@@ -18,6 +19,7 @@ describe('GDG Spaghetti Code Liberec example app', function () {
     });
 
     it('Titulek GDG Spaghetti Code Liberec', function(){
+      sleep(2);
       expect(element('.brand').text()).toBe('GDG Liberec');
     });
 
