@@ -54,7 +54,7 @@ describe('GDG Spaghetti Code Liberec example app', function () {
       });
       it('Stranku lze smazat', function(){
          element('a:contains("'+data[1].label+'")').click();
-         element('//div[class="btn-group"]/a:last').click();
+         element('i[class="icon-trash"]').click();
          expect(element('a:contains("'+data[1].label+'")')).toBe(undefined);
       });
     });
