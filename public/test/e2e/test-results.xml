@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 25.0 (Mac)" package="" timestamp="2013-03-14T11:00:01" id="0" hostname="rdpanek.local" tests="8" errors="0" failures="0" time="3.099">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22"/>
+    </properties>
+    <testcase name="Titulek GDG Spaghetti Code Liberec" time="2.11" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Kontrola HomePage"/>
+    <testcase name="Odkaz pro pridani noveho obsahu &quot;přidat stránku&quot;" time="0.099" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Kontrola HomePage"/>
+    <testcase name="Lze přidat novou stranku" time="0.125" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Stranky Kontrola formulare"/>
+    <testcase name="Ulozena stranka je v nabidce na hlavni strane" time="0.554" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Stranky Kontrola formulare"/>
+    <testcase name="Editace existujici stranky z AngularJS na NodeJS" time="0.072" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Stranky Kontrola formulare"/>
+    <testcase name="Editace stranky se zdarila" time="0.106" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Stranky Kontrola formulare"/>
+    <testcase name="Stranku lze smazat" time="0.02" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Stranky Kontrola formulare"/>
+    <testcase name="Stranka obsahuje vice jak jednu stranku" time="0.013" classname="Chrome 25.0 (Mac).GDG Spaghetti Code Liberec example app Stranky"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

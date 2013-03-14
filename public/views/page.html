@@ -1,0 +1,12 @@
+<div class="menu btn-toolbar" ng-show="page">
+	<div class="btn-group">
+		<a class="btn" href="/#/{{page.slug}}/edit"><i class="icon-pencil"></i></a>
+		<a class="btn" ng-click="delete(page)"><i class="icon-trash"></i></a>
+	</div>
+</div>
+
+<h1>{{page.label}}</h1>
+
+<br />
+
+<span ng-bind-html="page.content"></span>

@@ -1,0 +1,4 @@
+body { padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */ }
+.container { position: relative; }
+.menu.btn-toolbar { position: absolute; top: 10px; right: 0; }
+.hidden { display: none; }
